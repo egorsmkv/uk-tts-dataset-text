@@ -7,7 +7,7 @@ This repository contains scripts to generate TTS datasets for Ukrainian.
 ## Install
 
 ```bash
-pip install ukrainian-word-stress
+pip install --upgrade ukrainian-word-stress
 ```
 
 ## Data
