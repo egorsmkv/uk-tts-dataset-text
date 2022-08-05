@@ -19,11 +19,26 @@ It is in the `data/raw` folder.
 ### Extract appropriate sentences
 
 ```bash
-python tools/extract_exclamations.py --in_file data/raw/chorna_rada.txt
+python tools/extract_exclamations.py --in_file data/raw/boh_joho_batkiv.txt >> data/exclamations.txt
+python tools/extract_exclamations.py --in_file data/raw/boyci_za_pravdu.txt >> data/exclamations.txt
+python tools/extract_exclamations.py --in_file data/raw/chorna_rada.txt >> data/exclamations.txt
+python tools/extract_exclamations.py --in_file data/raw/duma_mushketery.txt >> data/exclamations.txt
+python tools/extract_exclamations.py --in_file data/raw/franko.txt >> data/exclamations.txt
+python tools/extract_exclamations.py --in_file data/raw/leontovich_hronika_grechok.txt >> data/exclamations.txt
 
-python tools/extract_questions.py --in_file data/raw/chorna_rada.txt
+python tools/extract_questions.py --in_file data/raw/boh_joho_batkiv.txt >> data/questions.txt
+python tools/extract_questions.py --in_file data/raw/boyci_za_pravdu.txt >> data/questions.txt
+python tools/extract_questions.py --in_file data/raw/chorna_rada.txt >> data/questions.txt
+python tools/extract_questions.py --in_file data/raw/duma_mushketery.txt >> data/questions.txt
+python tools/extract_questions.py --in_file data/raw/franko.txt >> data/questions.txt
+python tools/extract_questions.py --in_file data/raw/leontovich_hronika_grechok.txt >> data/questions.txt
 
-python tools/extract_lines.py --in_file data/raw/chorna_rada.txt
+python tools/extract_obvious.py --in_file data/raw/boh_joho_batkiv.txt >> data/obvious.txt
+python tools/extract_obvious.py --in_file data/raw/boyci_za_pravdu.txt >> data/obvious.txt
+python tools/extract_obvious.py --in_file data/raw/chorna_rada.txt >> data/obvious.txt
+python tools/extract_obvious.py --in_file data/raw/duma_mushketery.txt >> data/obvious.txt
+python tools/extract_obvious.py --in_file data/raw/franko.txt >> data/obvious.txt
+python tools/extract_obvious.py --in_file data/raw/leontovich_hronika_grechok.txt >> data/obvious.txt
 ```
 
 ### Add stresses

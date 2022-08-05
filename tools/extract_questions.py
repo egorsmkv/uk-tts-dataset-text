@@ -7,8 +7,15 @@ MAX_LEN = 80
 def count_words(line):
     return len(line.split(' '))
 
-def has_cyrillic(text):
-    return bool(re.search('[а-яА-Я]', text))
+
+def only_uk_sentence(v):
+    char_set_lower = 'а, б, в, г, ґ, д, е, є, ж, з, и, і, ї, й, к, л, м, н, о, п, р, с, т, у, ф, х, ц, ч, ш, щ, ь, ю, я'.replace(',','').replace(' ', '')
+    char_set_upper = char_set_lower.upper()
+    char_set = char_set_lower + char_set_upper
+    char_set = char_set + '—,!?' + "'" + ' '
+
+    return all((True if x in char_set else False for x in v))
+
 
 
 def run(in_file):
@@ -31,7 +38,7 @@ def run(in_file):
         for sentence in sentences:
             if any(elem in sentence for elem in  ['[', ']', '&', '*', ';', '…']):
                 continue
-            if not has_cyrillic(sentence):
+            if not only_uk_sentence(sentence):
                 continue
             print(sentence)
 
