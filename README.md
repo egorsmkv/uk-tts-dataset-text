@@ -46,9 +46,9 @@ python tools/extract_obvious.py --in_file data/raw/leontovich_hronika_grechok.tx
 ```bash
 python tools/add_stresses.py --in_file datasets/unstressed.txt >> datasets/stressed.txt
 
-python tools/add_stresses_only.py --in_file data/exclamations.txt >> datasets/stressed/exclamations.txt
-python tools/add_stresses_only.py --in_file data/questions.txt >> datasets/stressed/questions.txt
-python tools/add_stresses_only.py --in_file data/obvious.txt >> datasets/stressed/obvious.txt
+python tools/add_stresses_only_csv_private.py --in_file data/exclamations.txt >> datasets/stressed/exclamations.csv
+python tools/add_stresses_only_csv.py --in_file data/questions.txt >> datasets/stressed/questions.csv
+python tools/add_stresses_only_csv.py --in_file data/obvious.txt >> datasets/stressed/obvious.csv
 ```
 
 ## Acknowledgements

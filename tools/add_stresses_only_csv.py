@@ -10,9 +10,10 @@ def run(in_file):
     # Init stressifier
     stressify = Stressifier(stress_symbol=StressSymbol.CombiningAcuteAccent)
 
+    print('sentence')
     for line in lines:
         line_stressed = stressify(line)
-        print(line_stressed)
+        print('"' + line_stressed + '"')
 
 
 if __name__ == "__main__":
