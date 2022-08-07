@@ -8,6 +8,8 @@ This repository contains scripts to generate TTS datasets for Ukrainian.
 
 ```bash
 pip install --upgrade ukrainian-word-stress
+
+pip install git+https://github.com/NeonBohdan/ukrainian-accentor-transformer.git
 ```
 
 ## Data
@@ -46,9 +48,9 @@ python tools/extract_obvious.py --in_file data/raw/leontovich_hronika_grechok.tx
 ```bash
 python tools/add_stresses.py --in_file datasets/unstressed.txt >> datasets/stressed.txt
 
-python tools/add_stresses_only_csv.py --in_file data/exclamations.txt >> datasets/stressed/exclamations.csv
-python tools/add_stresses_only_csv.py --in_file data/questions.txt >> datasets/stressed/questions.csv
-python tools/add_stresses_only_csv.py --in_file data/obvious.txt >> datasets/stressed/obvious.csv
+python tools/add_stresses_only_csv_transformer.py --in_file data/exclamations.txt >> datasets/stressed/exclamations.csv
+python tools/add_stresses_only_csv_transformer.py --in_file data/questions.txt >> datasets/stressed/questions.csv
+python tools/add_stresses_only_csv_transformer.py --in_file data/obvious.txt >> datasets/stressed/obvious_3.csv
 ```
 
 ## Acknowledgements
