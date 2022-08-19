@@ -56,4 +56,5 @@ python tools/add_stresses_only_csv_transformer.py --in_file data/obvious.txt >> 
 ## Acknowledgements
 
 - Ukrainian word stress: https://github.com/lang-uk/ukrainian-word-stress
+- Ukrainian accentor: https://github.com/NeonBohdan/ukrainian-accentor-transformer
 - Wikisource: https://uk.wikisource.org
