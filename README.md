@@ -53,6 +53,12 @@ python tools/add_stresses_only_csv_transformer.py --in_file data/questions.txt >
 python tools/add_stresses_only_csv_transformer.py --in_file data/obvious.txt >> datasets/stressed/obvious_3.csv
 ```
 
+### Convert the dataset obtained from the Online Microphone to convenient format
+
+```bash
+python tools/prepare_dataset.py --raw_files ../done/lada/ --save_to ../dataset_lada
+```
+
 ## Acknowledgements
 
 - Ukrainian word stress: https://github.com/lang-uk/ukrainian-word-stress
