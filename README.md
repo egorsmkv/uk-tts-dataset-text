@@ -1,8 +1,8 @@
-# Texts for the Ukrainian Text to Speech dataset
+# Texts for the Ukrainian Text-to-Speech dataset
 
 ## Overview
 
-This repository contains scripts to generate TTS datasets (text part of them) for Ukrainian.
+This repository contains scripts to generate Text-to-Speech datasets (text part of them) for Ukrainian.
 
 ## Related works
 
