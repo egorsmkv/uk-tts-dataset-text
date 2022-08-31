@@ -57,11 +57,15 @@ python tools/add_stresses_only_csv_transformer.py --in_file data/questions.txt >
 python tools/add_stresses_only_csv_transformer.py --in_file data/obvious.txt >> datasets/stressed/obvious_3.csv
 ```
 
-### Convert the dataset obtained from the Online Microphone to convenient format
+### Convert the dataset obtained from the Online Microphone [1] to convenient format
 
 ```bash
 python tools/prepare_dataset.py --raw_files ../done/lada/ --save_to ../dataset_lada
 ```
+
+## Notes
+
+1. The Online Microphone is a proprietary software to record speakers made by [Yehor Smoliakov](https://github.com/egorsmkv)
 
 ## Acknowledgements
 
