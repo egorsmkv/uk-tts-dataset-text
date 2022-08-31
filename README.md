@@ -4,6 +4,10 @@
 
 This repository contains scripts to generate TTS datasets (text part of them) for Ukrainian.
 
+## Related works
+
+- https://github.com/egorsmkv/ukrainian-tts-datasets (Open Source Ukrainian Text-to-Speech datasets)
+
 ## Install
 
 ```bash
