@@ -23,7 +23,7 @@ def run(raw_files, save_to):
 
         new_meta = {
             'file': meta['file'],
-            'orig_text_wo_stress': sample['orig_text_wo_stress'],
+            'orig_text_wo_stress': sample['orig_text_wo_stress'].replace('\u0301', ''),
             'orig_text': sample['orig_text'],
         }
 
