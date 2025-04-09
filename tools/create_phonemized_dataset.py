@@ -21,6 +21,12 @@ df4 = df4.with_columns(pl.lit('question').alias('type'))
 
 concat = pl.concat([df, df2, df3, df4])
 
+def count_chars(x):
+    return len(x)
+
+def count_word_length(x):
+    return len(x.split())
+
 def remove_dashes(v):
     return v.replace('—', '').replace('–', '').strip()
 
@@ -53,25 +59,38 @@ concat = concat.with_columns(pl.col('sentence').alias('sentence_original'))
 
 concat = concat.with_columns(pl.col('sentence').map_elements(remove_dashes, return_dtype=pl.String).alias('sentence'))
 
+concat = concat.with_columns(pl.col('sentence').map_elements(count_word_length, return_dtype=pl.Int64).alias('sentence_word_length'))
+
 concat = concat.with_columns(pl.col('sentence').map_elements(remove_stresses, return_dtype=pl.String).alias('sentence_no_stress'))
 
 concat = concat.with_columns(pl.col('sentence').map_elements(replace_stresses, return_dtype=pl.String).alias('sentence_pluses'))
 
 concat = concat.with_columns(pl.col('sentence_pluses').map_elements(phonemize, return_dtype=pl.String).alias('sentence_pluses_phonemized'))
 
+concat = concat.with_columns(pl.col('sentence_pluses_phonemized').map_elements(count_chars, return_dtype=pl.Int64).alias('sentence_pluses_phonemized_length'))
+
 concat = concat.with_columns(pl.col('sentence_no_stress').map_elements(phonemize, return_dtype=pl.String).alias('sentence_no_stress_phonemized'))
 
+concat = concat.with_columns(pl.col('sentence_no_stress_phonemized').map_elements(count_chars, return_dtype=pl.Int64).alias('sentence_no_stress_phonemized_length'))
+
 concat = concat.with_columns(pl.col('sentence').map_elements(phonemize, return_dtype=pl.String).alias('sentence_phonemized'))
+
+concat = concat.with_columns(pl.col('sentence_phonemized').map_elements(count_chars, return_dtype=pl.Int64).alias('sentence_phonemized_length'))
+
 
 # Export
 concat = concat.select([
     'sentence_original',
     'sentence',
+    'sentence_word_length',
     'sentence_phonemized',
+    'sentence_phonemized_length',
     'sentence_no_stress',
     'sentence_no_stress_phonemized',
+    'sentence_no_stress_phonemized_length',
     'sentence_pluses',
     'sentence_pluses_phonemized',
+    'sentence_pluses_phonemized_length',
     'type',
 ])
 
